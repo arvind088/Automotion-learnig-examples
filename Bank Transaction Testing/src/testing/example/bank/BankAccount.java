@@ -33,5 +33,6 @@ public class BankAccount {
             throw new IllegalArgumentException("Cannot withdraw " + amount + " from " + balance);
         }
         balance -= amount;
+        //just for check
     }
 }
