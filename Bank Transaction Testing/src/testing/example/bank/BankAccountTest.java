@@ -20,6 +20,39 @@ import org.junit.Test;
 	  assertTrue("Ids should be incremental",
 	  firstAccount.getId() < secondAccount.getId());
 	  }
+	 
+	 @Test
+	  public void testDepositWhenAmountIsCorrectShouldIncreaseBalance() {
+	  // setup
+	  BankAccount bankAccount = new BankAccount();
+	  // exercise
+	  bankAccount.deposit(10);
+	  // verify
+	  assertEquals(10, bankAccount.getBalance(), 0);
+	 }
+	 
+	 
+	 @Test
+	  public void testDepositWhenAmountIsNegativeShouldThrow() {
+	  // setup
+	  BankAccount bankAccount = new BankAccount();
+	  try {
+	  // exercise
+	  bankAccount.deposit(-1);
+	  fail("Expected an IllegalArgumentException to be thrown");
+	  } catch (IllegalArgumentException e) {
+	  // verify
+	  assertEquals("Negative amount: -1", e.getMessage());
+	  assertEquals(0, bankAccount.getBalance(), 0);
+	  }
+	  }
+	 
+	 @Test(expected = IllegalArgumentException.class)
+	  public void testDepositWhenAmountIsNegativeShouldThrowWithExpected() {
+	  BankAccount bankAccount = new BankAccount();
+	  bankAccount.deposit(-1);
+	 }
+
 
 
  }
