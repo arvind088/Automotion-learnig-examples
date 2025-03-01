@@ -21,6 +21,15 @@ import org.junit.Test;
 	  firstAccount.getId() < secondAccount.getId());
 	  }
 	 
+	/*
+	 wrong test 
+	 *  public void testIdsAreIncremental() {
+		  BankAccount firstAccount = new BankAccount();
+		  BankAccount secondAccount = new BankAccount();
+		  assertEquals(1, firstAccount.getId());
+		  assertEquals(2, secondAccount.getId());
+		  }*/
+	 
 	 @Test
 	  public void testDepositWhenAmountIsCorrectShouldIncreaseBalance() {
 	  // setup
